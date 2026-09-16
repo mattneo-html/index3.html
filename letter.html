@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INTERLUDE HTML</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #ffd6e7, #fff0f6, #fbd1dc);
+            overflow: hidden;
+        }
+
+        /* PRESS THIS SCREEN */
+        .start {
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .start h1 {
+            color: #d94f70;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .open-btn {
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            background: #d94f70;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.08);
+            background: #c83f62;
+        }
+
+        /* LETTER */
+        .card {
+            display: none;
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .card.show {
+            display: block;
+            animation: appear 1.2s ease;
+        }
+
+        h2 {
+            color: #d94f70;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        .letter {
+            color: #4a3a3f;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .ending {
+            margin-top: 25px;
+            text-align: center;
+            color: #d94f70;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        /* FLOATING HEARTS */
+        .heart {
+            position: absolute;
+            color: #ff6f91;
+            font-size: 25px;
+            animation: float 6s linear infinite;
+            opacity: 0.7;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            bottom: -30px;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 30%;
+            bottom: -30px;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 60%;
+            bottom: -30px;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(4) {
+            left: 85%;
+            bottom: -30px;
+            animation-delay: 3s;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+
+
+    <!-- FIRST SCREEN -->
+    <div class="start" id="startScreen">
+
+        <h1>Neo left you a message... 💌</h1>
+
+        <button class="open-btn" onclick="openLetter()">
+            Press this 💗
+        </button>
+
+    </div>
+
+
+    <!-- LETTER -->
+    <div class="card" id="letter">
+
+        <h2>For My Bebe 💗</h2>
+
+        <div class="letter">
+
+            <p>Hii bebe,</p>
+
+            <p>
+                Thank you sa ginawa mo sakin, through all the efforts
+                na pinakita mo sakin. Thank you sa walang sawang
+                pagmamahal sakin, and for taking care of me.
+            </p>
+
+            <p>
+                If ever napagod ka sa exam mo, it's finee.
+                You did your best, bebeko.
+            </p>
+
+            <p>
+                I have a surprise kasi pumasa ka sa midterm exam. 💗
+            </p>
+
+            <p>
+                I know nakakapagod yung August na 'yon,
+                pero natuwa ako kasi nalampasan natin 'yon.
+            </p>
+
+            <p>
+                Mahal na mahal kita bebe. Ginawa ko 'to kasi
+                ayun, na-bored ako eh. HAHAHA.
+            </p>
+
+            <p>
+                Thank you for being the best girl ever!!!
+            </p>
+
+            <p class="ending">
+                I love youu so muchh poo!! 💗<br>
+                May the universe be good to you! ✨
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function openLetter() {
+
+            document.getElementById("startScreen").style.display = "none";
+
+            document.getElementById("letter").classList.add("show");
+
+        }
+    </script>
+
+</body>
+</html>
